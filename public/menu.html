@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Dashboard Usuario</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body class="bg-gray-100">
+
+  <!-- Barra lateral -->
+  <div class="flex h-screen">
+    <div class="w-64 bg-green-900 text-white p-6">
+      <h1 class="text-3xl font-semibold mb-6">User Dashboard</h1>
+      <ul>
+        <li class="mb-4 hover:bg-green-700 p-2 rounded-md"><a href="#">Inicio</a></li>
+        <li class="mb-4 hover:bg-green-700 p-2 rounded-md"><a href="#">Mis Ventas</a></li>
+        <li class="mb-4 hover:bg-green-700 p-2 rounded-md"><a href="#">Perfil</a></li>
+      </ul>
+      <div class="mt-6">
+        <button class="w-full bg-red-600 hover:bg-red-700 text-white py-2 px-4 rounded-md focus:outline-none focus:ring-2 focus:ring-red-600" onclick="window.location.href='/login'">Cerrar Sesión</button>
+      </div>
+    </div>
+
+    <!-- Contenido principal -->
+    <div class="flex-1 p-6">
+      <h2 class="text-2xl font-semibold mb-4">Bienvenido, Usuario</h2>
+      <p class="mb-6">Aquí puedes ver tus datos de ventas y actualizar tu perfil.</p>
+
+      <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+        <div class="bg-white p-4 shadow-lg rounded-md hover:bg-green-50">
+          <h3 class="font-semibold text-xl mb-2">Mis Ventas</h3>
+          <p>Accede al análisis de tus ventas y rendimiento.</p>
+        </div>
+        <div class="bg-white p-4 shadow-lg rounded-md hover:bg-green-50">
+          <h3 class="font-semibold text-xl mb-2">Perfil</h3>
+          <p>Ver y actualizar tu información personal.</p>
+        </div>
+        <div class="bg-white p-4 shadow-lg rounded-md hover:bg-green-50">
+          <h3 class="font-semibold text-xl mb-2">Ayuda</h3>
+          <p>Solicita asistencia o consulta la documentación.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+
+</body>
+</html>
