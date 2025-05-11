@@ -1,0 +1,6 @@
+D,Producto,Cantidad,Precio,Fecha
+1,Camiseta,3,20.5,2024-05-01
+2,Pantalón,2,35.0,2024-05-02
+3,Camiseta,3,20.5,2024-05-01
+4,,5,12.0,2024-05-03
+5,Chaqueta,,50.0,2024-05-04
