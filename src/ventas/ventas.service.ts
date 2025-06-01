@@ -18,16 +18,26 @@ export class VentasService {
        })
     }
    async CrearVenta(data: sales): Promise<sales> {
+    const { product_name, quantity, unit_price, created_by } = data;
        return this.prisma.sales.create({
-            data
+            data: {
+                product_name,
+                quantity,
+                unit_price,
+                created_by,
+                },
        });
     }
    async ModificarVenta(id: number, data: sales): Promise<sales> {
+    const { product_name, quantity, unit_price, created_by } = data;
        return this.prisma.sales.update({
-            where: {
-                id
+            where: { id },
+            data: {
+                product_name,
+                quantity,
+                unit_price,
+                created_by,
             },
-            data
        });
     }
    async EliminarVenta(id: number): Promise<sales> {

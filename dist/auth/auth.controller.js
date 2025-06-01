@@ -38,10 +38,10 @@ let AuthController = class AuthController {
             const result = await this.authService.login(email, password);
             const payload = this.jwtService.decode(result.access_token);
             if (payload?.role === 'ADMIN') {
-                return res.redirect('/admin.html');
+                return res.redirect('http://localhost:4200/admin/inicioAdmin');
             }
             else if (payload?.role === 'USER') {
-                return res.redirect('/menu.html');
+                return res.redirect('http://localhost:4200/');
             }
             else {
                 return res.status(403).send('Rol no permitido');

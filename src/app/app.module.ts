@@ -6,11 +6,13 @@ import { AuthModule } from '../auth/auth.module';
 import { PrismaModule } from '../prisma.module'; 
 import { JwtModule } from '@nestjs/jwt';
 import { VentasModule } from '../ventas/ventas.module';
+import { UserModule } from './usuarios/user.module';
 
 
 @Module({
   imports: [
     VentasModule,
+    UserModule,
     ServeStaticModule.forRoot({
       rootPath: join(__dirname, '..', '..', 'public'),
     }),

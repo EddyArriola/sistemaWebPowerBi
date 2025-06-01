@@ -26,7 +26,7 @@ export class VentasController {
     }
     @Put(':id')
     async Modificar(@Param('id') id: string, @Body() data: sales){
-        return this.ventaService.EliminarVenta(Number(id))
+        return this.ventaService.ModificarVenta(Number(id), data)
     }
 
 }

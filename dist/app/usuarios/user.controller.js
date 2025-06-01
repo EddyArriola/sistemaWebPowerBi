@@ -12,57 +12,57 @@ var __param = (this && this.__param) || function (paramIndex, decorator) {
     return function (target, key) { decorator(target, key, paramIndex); }
 };
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.VentasController = void 0;
+exports.userController = void 0;
 const common_1 = require("@nestjs/common");
-const ventas_service_1 = require("./ventas.service");
-let VentasController = class VentasController {
-    constructor(ventaService) {
-        this.ventaService = ventaService;
+const user_service_1 = require("./user.service");
+let userController = class userController {
+    constructor(userService) {
+        this.userService = userService;
     }
     async getTodo() {
-        return this.ventaService.ObtenerTodoVentas();
+        return this.userService.ObtenerTodo();
     }
     async crearVenta(data) {
-        return this.ventaService.CrearVenta(data);
+        return this.userService.Crear(data);
     }
     async getPorId(id) {
-        return this.ventaService.ObtenerUnaVenta(Number(id));
+        return this.userService.ObtenerUno(Number(id));
     }
     async borrar(id) {
-        return this.ventaService.EliminarVenta(Number(id));
+        return this.userService.Eliminar(Number(id));
     }
     async Modificar(id, data) {
-        return this.ventaService.ModificarVenta(Number(id), data);
+        return this.userService.Modificar(Number(id), data);
     }
 };
-exports.VentasController = VentasController;
+exports.userController = userController;
 __decorate([
     (0, common_1.Get)(),
     __metadata("design:type", Function),
     __metadata("design:paramtypes", []),
     __metadata("design:returntype", Promise)
-], VentasController.prototype, "getTodo", null);
+], userController.prototype, "getTodo", null);
 __decorate([
     (0, common_1.Post)(),
     __param(0, (0, common_1.Body)()),
     __metadata("design:type", Function),
     __metadata("design:paramtypes", [Object]),
     __metadata("design:returntype", Promise)
-], VentasController.prototype, "crearVenta", null);
+], userController.prototype, "crearVenta", null);
 __decorate([
     (0, common_1.Get)(':id'),
     __param(0, (0, common_1.Param)('id')),
     __metadata("design:type", Function),
     __metadata("design:paramtypes", [String]),
     __metadata("design:returntype", Promise)
-], VentasController.prototype, "getPorId", null);
+], userController.prototype, "getPorId", null);
 __decorate([
     (0, common_1.Delete)(':id'),
     __param(0, (0, common_1.Param)('id')),
     __metadata("design:type", Function),
     __metadata("design:paramtypes", [String]),
     __metadata("design:returntype", Promise)
-], VentasController.prototype, "borrar", null);
+], userController.prototype, "borrar", null);
 __decorate([
     (0, common_1.Put)(':id'),
     __param(0, (0, common_1.Param)('id')),
@@ -70,9 +70,9 @@ __decorate([
     __metadata("design:type", Function),
     __metadata("design:paramtypes", [String, Object]),
     __metadata("design:returntype", Promise)
-], VentasController.prototype, "Modificar", null);
-exports.VentasController = VentasController = __decorate([
-    (0, common_1.Controller)('ventas'),
-    __metadata("design:paramtypes", [ventas_service_1.VentasService])
-], VentasController);
-//# sourceMappingURL=ventas.controller.js.map
+], userController.prototype, "Modificar", null);
+exports.userController = userController = __decorate([
+    (0, common_1.Controller)('user'),
+    __metadata("design:paramtypes", [user_service_1.userService])
+], userController);
+//# sourceMappingURL=user.controller.js.map

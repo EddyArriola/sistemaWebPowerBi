@@ -9,57 +9,57 @@ var __metadata = (this && this.__metadata) || function (k, v) {
     if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
 };
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.VentasService = void 0;
+exports.userService = void 0;
 const common_1 = require("@nestjs/common");
-const prisma_service_1 = require("../prisma.service");
-let VentasService = class VentasService {
+const prisma_service_1 = require("../../prisma.service");
+let userService = class userService {
     constructor(prisma) {
         this.prisma = prisma;
     }
-    async ObtenerTodoVentas() {
-        return this.prisma.sales.findMany();
+    async ObtenerTodo() {
+        return this.prisma.user.findMany();
     }
-    async ObtenerUnaVenta(id) {
-        return this.prisma.sales.findUnique({
+    async ObtenerUno(id) {
+        return this.prisma.user.findUnique({
             where: {
                 id
             }
         });
     }
-    async CrearVenta(data) {
-        const { product_name, quantity, unit_price, created_by } = data;
-        return this.prisma.sales.create({
+    async Crear(data) {
+        const { email, password, role, createdAt } = data;
+        return this.prisma.user.create({
             data: {
-                product_name,
-                quantity,
-                unit_price,
-                created_by,
+                email,
+                password,
+                role,
+                createdAt,
             },
         });
     }
-    async ModificarVenta(id, data) {
-        const { product_name, quantity, unit_price, created_by } = data;
-        return this.prisma.sales.update({
+    async Modificar(id, data) {
+        const { email, password, role, createdAt } = data;
+        return this.prisma.user.update({
             where: { id },
             data: {
-                product_name,
-                quantity,
-                unit_price,
-                created_by,
+                email,
+                password,
+                role,
+                createdAt
             },
         });
     }
-    async EliminarVenta(id) {
-        return this.prisma.sales.delete({
+    async Eliminar(id) {
+        return this.prisma.user.delete({
             where: {
                 id
             }
         });
     }
 };
-exports.VentasService = VentasService;
-exports.VentasService = VentasService = __decorate([
+exports.userService = userService;
+exports.userService = userService = __decorate([
     (0, common_1.Injectable)(),
     __metadata("design:paramtypes", [prisma_service_1.PrismaService])
-], VentasService);
-//# sourceMappingURL=ventas.service.js.map
+], userService);
+//# sourceMappingURL=user.service.js.map
