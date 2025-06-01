@@ -14,12 +14,14 @@ const app_controller_1 = require("./app.controller");
 const auth_module_1 = require("../auth/auth.module");
 const prisma_module_1 = require("../prisma.module");
 const jwt_1 = require("@nestjs/jwt");
+const ventas_module_1 = require("../ventas/ventas.module");
 let AppModule = class AppModule {
 };
 exports.AppModule = AppModule;
 exports.AppModule = AppModule = __decorate([
     (0, common_1.Module)({
         imports: [
+            ventas_module_1.VentasModule,
             serve_static_1.ServeStaticModule.forRoot({
                 rootPath: (0, path_1.join)(__dirname, '..', '..', 'public'),
             }),

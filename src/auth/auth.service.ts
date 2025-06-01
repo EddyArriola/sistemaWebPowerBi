@@ -2,9 +2,7 @@ import { Injectable } from '@nestjs/common';
 import * as bcrypt from 'bcrypt';
 import { PrismaService } from '../prisma.service';
 import { JwtService } from '@nestjs/jwt';
-
-
-import { Role } from '@prisma/client';
+import {user_role} from '@prisma/client'
 
 @Injectable()
 export class AuthService {
@@ -25,7 +23,7 @@ export class AuthService {
     }
 
     // Convertir el role a un valor del enum Role
-    const userRole: Role = role.toUpperCase() === 'ADMIN' ? Role.ADMIN : Role.USER;
+    const userRole: user_role = role.toUpperCase() === 'ADMIN' ? user_role.ADMIN : user_role.USER;
 
     
     const hashedPassword = await bcrypt.hash(password, 10);

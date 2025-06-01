@@ -5,10 +5,12 @@ import { AppController } from './app.controller';
 import { AuthModule } from '../auth/auth.module';
 import { PrismaModule } from '../prisma.module'; 
 import { JwtModule } from '@nestjs/jwt';
+import { VentasModule } from '../ventas/ventas.module';
 
 
 @Module({
   imports: [
+    VentasModule,
     ServeStaticModule.forRoot({
       rootPath: join(__dirname, '..', '..', 'public'),
     }),
